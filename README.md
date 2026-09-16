@@ -2,7 +2,7 @@
 
 遊戲網址：https://ij-teacher.github.io/accounting-catch-game/
 
-學生免登入。每次開啟網頁、開始新回合，從 GitHub 讀取 bank.json；進行中的回合使用開始時的題目。載入失敗會提示重試，不會偷偷改用本機舊題庫。GitHub 的快取傳播可能造成短暫延遲。
+學生免登入。每次開啟網頁、開始新回合，從 GitHub 讀取 bank.json；進行中的回合使用開始時的題目。載入失敗會提示重試，不會偷偷改用本機舊題庫。發布後 GitHub Pages 需重新部署，通常約 1–2 分鐘。畫面先顯示已送出，確認公開學生版版本後才顯示學生版已更新。
 
 ## 老師編輯
 
@@ -17,5 +17,5 @@
 
 舊版在同一瀏覽器儲存的題庫，可在老師登入後按「匯入此瀏覽器舊題庫」，檢查後發布。載入預設題庫只修改草稿，按發布才會影響全班。編輯衝突或發布失敗時保留草稿，並提供 JSON 備份下載。
 
-本版本僅使用 GitHub Pages、GitHub 原始檔及 GitHub REST API，無 Cloudflare 依賴。不儲存學生作答紀錄。
+本版本僅使用 GitHub Pages 及 GitHub REST API，無 Cloudflare 依賴。不儲存學生作答紀錄。
 
