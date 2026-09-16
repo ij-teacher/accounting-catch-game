@@ -1,13 +1,21 @@
-# 會計接接樂（入門試玩版）
+# 會計接接樂：GitHub 共用題庫版
 
-供會計老師確認玩法與題目。五大要素各 3 題，每回合 15 題；使用鍵盤左右方向鍵移動。速度可於遊戲中即時切換，卡片保持目前位置。
+遊戲網址：https://ij-teacher.github.io/accounting-catch-game/
 
-直接開啟 index.html 即可遊玩，不需安裝套件。沒有登入、學生資料上傳或永久紀錄。
+學生免登入。每次開啟網頁、開始新回合，從 GitHub 讀取 bank.json；進行中的回合使用開始時的題目。載入失敗會提示重試，不會偷偷改用本機舊題庫。GitHub 的快取傳播可能造成短暫延遲。
 
-網頁內「老師查看」列出完整題庫與解說。此版待教師審閱，後續依回饋修改。
+## 老師編輯
 
-作答後自動連續出題，不需按下一題。掉落速度可選 5 秒或 8 秒（預設 8 秒）。
+1. 在 GitHub 建立 Fine-grained personal access token。
+2. Resource owner 選 ij-teacher，Repository access 選 Only select repositories，只選 accounting-catch-game。
+3. Repository permissions 的 Contents 設為 Read and write，選擇合適到期日。
+4. 打開遊戲的「老師登入／編輯共用題庫」，貼上權杖登入。
+5. 編輯後按「發布共用題庫」。學生開啟原網址或開始新回合即可載入。
+6. 完成後登出。權杖只保留在頁面記憶體，不寫入 localStorage、sessionStorage 或儲存庫；重新整理後需再次輸入。權杖到期可在 GitHub 重新建立，遺失可撤銷。
 
-手機版：點按畫面下方「← 左移」「右移 →」按鈕操作，支援直式畫面；電腦仍可使用鍵盤左右鍵。
+不是 GitHub 帳號密碼，也不是所有學生共用的密碼。GitHub 會在寫入 API 驗證儲存庫權限。存取權杖具有選取儲存庫的內容寫入權限，不只 bank.json，請勿提供給學生。網站及題庫公開，請勿放入私人資料。
 
-老師可編輯題目、分類、解說，新增／刪除項目並儲存於瀏覽器。自訂題庫不會同步到其他裝置；每回合抽取最多 15 題。
+舊版在同一瀏覽器儲存的題庫，可在老師登入後按「匯入此瀏覽器舊題庫」，檢查後發布。載入預設題庫只修改草稿，按發布才會影響全班。編輯衝突或發布失敗時保留草稿，並提供 JSON 備份下載。
+
+本版本僅使用 GitHub Pages、GitHub 原始檔及 GitHub REST API，無 Cloudflare 依賴。不儲存學生作答紀錄。
+
