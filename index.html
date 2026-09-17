@@ -50,7 +50,7 @@ function selectedRoundCount(){const value=$('roundCount').value;return value==='
 function updateRoundLabel(){if(state==='idle'){$('start').textContent='開始 '+selectedRoundCount()+' 題挑戰';$('progress').textContent='0 / '+selectedRoundCount()}}
 function updateRoundOptions(){
  const select=$('roundCount'),previous=select.value||'all';select.replaceChildren();
- for(let n=5;n<=bank.length;n+=5){const option=new Option(n+' 題',String(n));select.add(option)}
+ for(let n=1;n<=bank.length;n++){const option=new Option(n+' 題',String(n));select.add(option)}
  select.add(new Option('全部（'+bank.length+' 題）','all'));
  select.value=[...select.options].some(o=>o.value===previous)?previous:'all';select.disabled=!bank.length;updateRoundLabel();
 }
